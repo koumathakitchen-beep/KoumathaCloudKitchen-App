@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Koumatha Cloud Home Kitchen — Premium</title>
+  <meta name="description" content="Koumatha Cloud Home Kitchen — authentic biryani, South Indian breakfast & catering in Chennai." />
+  <style>
+    :root{
+      --accent: #ff9800;
+      --accent-2: #43a047;
+      --muted: #f6f3ef;
+      --glass: rgba(255,255,255,0.12);
+      --glass-strong: rgba(255,255,255,0.72);
+      --card-bg: rgba(255,255,255,0.95);
+      --text: #181818;
+      --hero-text: #fff;
+      --gold: linear-gradient(90deg,#ffd54f,#ff9800 40%,#ffd600);
+      --glass-border: rgba(255,255,255,0.35);
+      --shadow: 0 10px 30px rgba(16,24,40,0.12);
+      --glass-blur: 10px;
+      --maxwidth: 1100px;
+      --ai-blue: #0b84ff;
+    }
+    /* base */
+    html,body{height:100%}
+    body{
+      margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color:var(--text);
+background: linear-gradient(180deg, rgba(0,0,0,0.18), rgba(0,0,0,0.06)), url('img/Background.png') center/cover fixed no-repeat;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:28px 12px;
+    }
+    .container{max-width:var(--maxwidth);margin:0 auto;padding:22px;position:relative;z-index:3}
+    header{
+      display:flex;align-items:center;gap:18px;padding:18px;border-radius:18px;background:linear-gradient(90deg, rgba(255,152,0,0.95), rgba(244,67,54,0.9));color:#fff;box-shadow: 0 8px 40px rgba(244,67,54,0.14);position:relative;overflow:hidden
+    }
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:92px;height:92px;border-radius:50%;overflow:hidden;border:5px solid rgba(255,255,255,0.18);box-shadow:0 6px 30px rgba(0,0,0,0.18);flex-shrink:0}
+    .brand h1{margin:0;font-size:1.9rem;letter-spacing:1px;text-transform:capitalize;line-height:1}
+    .brand p{margin:0;font-weight:600;opacity:0.95}
+    .shiny{background:var(--gold);-webkit-background-clip:text;background-clip:text;color:transparent;position:relative}
+    .shiny::after{content:'';position:absolute;left:-40%;top:0;height:100%;width:40%;background:linear-gradient(120deg, rgba(255,255,255,0.45), rgba(255,255,255,0.06));transform:skewX(-18deg);animation:shine 2.6s infinite}
+    @keyframes shine{to{left:120%}}
+    header .meta{margin-left:auto;text-align:right}
+    .hours{font-weight:700}
+    .badge{display:inline-block;padding:6px 10px;border-radius:12px;background:rgba(0,0,0,0.08);font-weight:700;color:#fff;border:1px solid rgba(255,255,255,0.12)}
+    /* -- HERO SECTION -- */
+    .hero{
+      display:flex;gap:28px;align-items:center;margin-top:18px
+    }
+    .hero-card{
+      flex:1;
+      background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.09));
+      border-radius:18px;
+      padding:18px;
+      backdrop-filter: blur(var(--glass-blur));
+      border:1.5px solid var(--glass-border);
+      box-shadow:var(--shadow);
+      display:flex;gap:18px;align-items:center
+    }
+    .hero-img{
+      width:340px;height:220px;border-radius:14px;
+      object-fit:cover;border:6px solid rgba(255,255,255,0.65);
+      box-shadow:0 18px 40px rgba(0,0,0,0.18);flex-shrink:0
+    }
+    .hero-cta h2{
+      margin:0;font-size:2.1rem;
+      color:var(--hero-text);font-weight:800;letter-spacing:1px;
+    }
+    .hero-cta p{
+      font-size:1.2rem;
+      margin:12px 0 16px 0;
+      color:var(--hero-text);
+      font-weight:400;
+    }
+    .cta-row{display:flex;gap:12px;align-items:center}
+    .btn{background:var(--accent);color:var(--text);border:none;padding:10px 16px;border-radius:10px;font-weight:800;cursor:pointer;box-shadow:0 10px 24px rgba(255,152,0,0.18);transition:transform .18s}
+    .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.2);color:var(--hero-text);}
+    .btn:hover{transform:translateY(-4px)}
+    /* -- TODAY'S SPECIAL -- */
+    .hero-aside{
+      width:320px;display:flex;flex-direction:column;gap:12px
+    }
+    .special-card{
+      padding:18px;border-radius:13px;background:linear-gradient(180deg,#fff,#fffbe6);box-shadow:var(--shadow);border:1px solid rgba(0,0,0,0.04)
+    }
+    .special-card strong{display:block;font-size:1.1rem;margin-bottom:6px;color:#222;}
+    .special-highlight{
+      margin-top:8px;font-weight:800;
+      color:var(--accent);font-size:1.14rem;
+    }
+    .special-highlight .bestseller{
+      color:var(--accent-2);font-weight:800;
+      margin-left:8px;
+    }
+    .special-card small{
+      display:block;margin-top:8px;color:#6a3b00;
+    }
+    /* -- HYGIENE -- */
+    .hygiene-card{
+      padding:16px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.2), rgba(255,255,255,0.08));
+      backdrop-filter: blur(6px);
+      border:1px solid rgba(255,255,255,0.19);
+      color:var(--hero-text);
+      font-size:1.12rem;
+      font-weight:600;
+      margin-top:12px;
+    }
+    .hygiene-card strong{
+      font-size:1.13rem;
+      color:var(--hero-text);
+    }
+    .hygiene-card p{
+      margin:6px 0 0 0;
+      color:var(--hero-text);
+      font-size:1.08rem;
+      font-weight:400;
+    }
+    /* -- MENU SECTION -- */
+    .menu-section{margin-top:22px;background:var(--card-bg);padding:22px;border-radius:18px;box-shadow:0 12px 36px rgba(10,10,10,0.06)}
+    .menu-title{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .menu-title h3{margin:0;font-size:1.5rem;color:var(--text);}
+    .search{display:flex;gap:10px;align-items:center}
+    .search input{padding:10px 12px;border-radius:10px;border:1px solid #eee;min-width:220px}
+    .sections{display:grid;grid-template-columns:1fr;gap:20px;margin-top:18px}
+    .category-block{margin-bottom:32px;}
+    .category-title{font-size:1.15rem;font-weight:900;color:var(--text);margin-bottom:8px;border-left:5px solid var(--accent-2);padding-left:8px;}
+    .dishes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+    .dish{display:flex;flex-direction:column;align-items:center;text-align:center;padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,250,240,0.98));box-shadow:0 10px 24px rgba(12,12,12,0.06);transition:transform .25s, box-shadow .25s;position:relative}
+    .dish:hover{transform:translateY(-8px);box-shadow:0 22px 48px rgba(0,0,0,0.11)}
+    .dish img{width:100%;height:120px;object-fit:cover;border-radius:10px;margin-bottom:8px}
+    .dish .name{font-weight:800;color:var(--accent);margin-bottom:6px}
+    .dish .price{font-weight:900;color:var(--accent-2);margin-bottom:8px}
+    .dish .desc{font-size:.95rem;color:var(--text);margin-bottom:10px}
+    .dish .order-row{display:flex;gap:8px;justify-content:center}
+    .icon-btn{padding:8px 10px;border-radius:8px;border:none;background:linear-gradient(180deg,#fff,#fff);cursor:pointer;font-weight:700;box-shadow:0 6px 18px rgba(0,0,0,0.06);color:var(--text);}
+    .ribbon{position:absolute;left:10px;top:12px;background:linear-gradient(90deg,#ffd600,#ff9800);padding:6px 10px;border-radius:8px;font-weight:800;color:var(--accent-2);box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+    .tag{position:absolute;left:10px;top:12px;background:linear-gradient(90deg,#eee,#ffd600);padding:5px 9px;border-radius:8px;font-weight:700;color:var(--accent-2);font-size:0.9em}
+    /* -- GRID FEEDBACK/CONTACT -- */
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:20px;margin-top:18px}
+    .feedback{background:linear-gradient(180deg,#fff,#fffdf0);padding:16px;border-radius:12px;border:1px solid #ffe9c5}
+    .feedback label{display:block;margin-bottom:6px;font-weight:700;color:var(--text);}
+    .feedback input, .feedback textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #eee;margin-bottom:8px}
+    .feedback button{display:block;margin-left:auto}
+    .contact-card{padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(67,160,71,0.95), rgba(67,160,71,0.92));color:var(--text);box-shadow:0 14px 36px rgba(67,160,71,0.12)}
+    .contact-card h4,
+    .contact-card p,
+    .contact-card strong{color:var(--text);}
+    footer{margin-top:18px;padding:14px;text-align:center;color:#a65e00;font-weight:800;background:var(--muted);}
+    .modal-backdrop{position:fixed;inset:0;background:rgba(9,10,11,0.4);display:none;align-items:center;justify-content:center;z-index:60}
+    .modal{background:#fff;padding:20px;border-radius:12px;max-width:520px;width:92%;box-shadow:0 20px 60px rgba(0,0,0,0.28);color:var(--text);}
+
+    /* floating food */
+    .floating-food{position:fixed;left:18px;bottom:18px;width:64px;height:64px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#fff, #fff8);box-shadow:0 10px 30px rgba(0,0,0,0.08);animation:float 6s ease-in-out infinite;z-index:30}
+    @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-14px)}100%{transform:translateY(0)}}
+
+    /* AI Assistant UI */
+    .ai-fab{
+      position:fixed;right:18px;bottom:18px;width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--ai-blue),#2dd4bf);box-shadow:0 20px 40px rgba(11,132,255,0.18);cursor:pointer;z-index:80;border:3px solid rgba(255,255,255,0.9)
+    }
+    .ai-fab img{width:36px;height:36px;display:block}
+    .ai-window{
+      position:fixed;right:18px;bottom:92px;width:360px;max-width:92vw;background:var(--card-bg);border-radius:12px;box-shadow:0 30px 60px rgba(0,0,0,0.28);z-index:81;display:none;flex-direction:column;overflow:hidden;
+    }
+    .ai-header{display:flex;align-items:center;gap:12px;padding:12px;border-bottom:1px solid rgba(0,0,0,0.06)}
+    .ai-header h4{margin:0;font-size:1rem}
+    .ai-body{padding:12px;display:flex;flex-direction:column;gap:8px;max-height:360px;overflow:auto}
+    .ai-input-row{display:flex;gap:8px;padding:10px;border-top:1px solid rgba(0,0,0,0.04);align-items:center}
+    .ai-input{flex:1;padding:8px 10px;border-radius:8px;border:1px solid #eee}
+    .ai-msg{padding:10px;border-radius:10px;max-width:82%;box-shadow:0 6px 18px rgba(0,0,0,0.06);line-height:1.3}
+    .ai-msg.user{align-self:flex-end;background:linear-gradient(90deg,#fff,#fff);color:var(--text);font-weight:700}
+    .ai-msg.bot{align-self:flex-start;background:linear-gradient(180deg,#f6f7fb,#eef3ff);color:#111}
+    .ai-small{font-size:0.82rem;color:#666;padding:6px 10px;border-radius:8px;background:transparent}
+    .ai-actions{display:flex;gap:8px;padding:10px}
+    .ai-suggestion{padding:8px 10px;border-radius:10px;background:linear-gradient(90deg,#fff,#fff);cursor:pointer;border:1px solid #eee}
+    /* responsive */
+    @media (max-width:980px){
+      .dishes-grid{grid-template-columns:repeat(2,1fr);}
+      .sections{grid-template-columns:1fr;}
+      .hero{flex-direction:column}
+      .hero-img{width:100%;height:220px}
+      .hero-aside{width:100%;}
+      .ai-window{right:12px;left:12px;bottom:78px}
+    }
+    @media (max-width:640px){
+      .dishes-grid{grid-template-columns:1fr;}
+      header{flex-direction:column;align-items:flex-start}
+      .meta{align-self:stretch;text-align:left}
+      .hero-img{height:200px}
+      .hero-card{padding:10px;}
+      .special-card{padding:10px;}
+      .ai-window{width:94vw;bottom:82px}
+    }
+
+    /* tiny helper */
+    .link-btn{background:transparent;border:none;color:var(--ai-blue);text-decoration:underline;cursor:pointer;padding:0;font-weight:700}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header role="banner">
+      <div class="brand">
+        <img class="logo" src="img/Logo.png" alt="Koumatha logo">
+        <div>
+          <h1 class="shiny">Koumatha Cloud Home Kitchen</h1>
+          <p>Authentic biryani • South Indian breakfast • Quality catering</p>
+        </div>
+      </div>
+      <div class="meta">
+        <div class="hours">Open 7:00AM — 23:00PM</div>
+        <div style="opacity:.95;margin-top:6px">📍 Chennai &nbsp; • &nbsp; ☎️ +91 9962225337</div>
+      </div>
+    </header>
+
+    <section class="hero" aria-label="Hero">
+      <div class="hero-card" aria-labelledby="hero-heading">
+        <img class="hero-img" src="img/Hero.png" alt="Biryani hero image">
+        <div class="hero-cta">
+          <h2 id="hero-heading">Fresh. Fast. Flavorful.</h2>
+          <p>Order authentic biryani, crunchy rolls and South Indian breakfast. Catering available — quick delivery across Chennai.</p>
+          <div class="cta-row">
+            <button class="btn" onclick="location.href='#menu'">Order Now</button>
+            <button class="btn secondary" onclick="openWhatsApp()">Message on WhatsApp</button>
+          </div>
+        </div>
+      </div>
+      <aside class="hero-aside" aria-hidden="false">
+        <div class="special-card" aria-live="polite">
+          <strong>Today’s Special</strong>
+          <div class="special-highlight">
+            Crispy 65 Biryani — ₹90 
+            <span style="margin-left:5px;">🔥</span>
+            <span class="bestseller">Bestseller</span>
+          </div>
+          <small>Free Royal Kuska on orders above ₹150 • 90% off on first order</small>
+        </div>
+        <div class="hygiene-card">
+          <strong>Hygiene</strong>
+          <p>5-star kitchen rating • Sealed packaging<br>• Contactless delivery</p>
+        </div>
+      </aside>
+    </section>
+
+   
+    <section id="menu" class="menu-section" aria-labelledby="menu-title">
+      <div class="menu-title">
+        <h3 id="menu-title">Our Menu</h3>
+        <div class="search">
+          <input id="searchInput" placeholder="Search dishes, e.g., biryani or dosa" aria-label="Search menu">
+          <button class="btn" onclick="applySearch()">Search</button>
+        </div>
+      </div>
+      <div class="sections" id="menuGrid">
+        <!-- Biryani -->
+        <div class="category-block">
+          <div class="category-title">| Biryani</div>
+          <div class="dishes-grid">
+            <div class="dish" data-name="Chef’s Chicken Biryani Delight">
+              <div class="ribbon">🔥 Bestseller</div>
+              <img src="https://i.ytimg.com/vi/AqDdTR6XD3o/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBiP2SaqLBfAQxs863CZhWQQIYY8A" alt="Chef’s Chicken Biryani Delight">
+              <div class="name">Chef’s Chicken Biryani Delight</div>
+              <div class="price">₹ 90</div>
+              <div class="desc">Aromatic chicken biryani with chef’s special spices.</div>
+              <div class="order-row">
+                <button class="icon-btn" onclick="redirectPartner('zomato')">Zomato</button>
+                <button class="icon-btn" onclick="redirectPartner('swiggy')">Swiggy</button>
+                <button class="icon-btn" onclick="redirectPartner('ubereats')">Uber Eats</button>
+              </div>
+            </div>
+            <div class="dish" data-name="Crispy 65 Biryani Feast">
+              <img src="https://i.ytimg.com/vi/Vyjpm0gGSi8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCVicnvMBnfGcraUfCxFxTMu-nS-g" alt="Crispy 65 Biryani Feast">
+              <div class="name">Crispy 65 Biryani Feast</div>
+              <div class="price">₹ 90</div>
+              <div class="desc">Biryani topped with spicy crispy 65 pieces.</div>
+              <div class="order-row">
+                <button class="icon-btn" onclick="redirectPartner('zomato')">Zomato</button>
+                <button class="icon-btn" onclick="redirectPartner('swiggy')">Swiggy</button>
+                <button class="icon-btn" onclick="redirectPartner('ubereats')">Uber Eats</button>
+              </div>
+            </div>
+            <div class="dish" data-name="Royal Kuska Special">
+              <img src="https://i.ytimg.com/vi/hr2WPcl9gHQ/hqdefault.jpg" alt="Royal Kuska Special">
+              <div class="name">Royal Kuska Special</div>
+              <div class="price">₹ 70</div>
+              <div class="desc">Flavourful plain biryani, a royal treat.</div>
+              <div class="order-row">
+                <button class="icon-btn" onclick="redirectPartner('zomato')">Zomato</button>
+                <button class="icon-btn" onclick="redirectPartner('swiggy')">Swiggy</button>
+                <button class="icon-btn" onclick="redirectPartner('ubereats')">Uber Eats</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Breakfast & Dinner -->
+        <div class="category-block">
+          <div class="category-title">| Breakfast & Dinner</div>
+          <div class="dishes-grid">
+            <div class="dish" data-name="Fluffy Soft Idly">
+              <img src="https://maayeka.com/wp-content/uploads/2013/10/soft-idli-recipe.jpg" alt="Fluffy Soft Idly">
+              <div class="name">Fluffy Soft Idly (2 pcs)</div>
+              <div class="price">₹ 30</div>
+              <div class="desc">Steamed rice cakes, soft and healthy.</div>
+              <div class="order-row">
+                <button class="icon-btn" onclick="redirectPartner('zomato')">Zomato</button>
+                <button class="icon-btn" onclick="redirectPartner('swiggy')">Swiggy</button>
+                <button class="icon-btn" onclick="redirectPartner('ubereats')">Uber Eats</button>
+              </div>
+            </div>
+            <div class="dish" data-name="Golden Crispy Dosa">
+              <div class="tag">Golden Crispy Dosa</div>
+              <img src="https://i.ytimg.com/vi/IZxkioBfEKU/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDherlLFdz2pKLCWw6zr6OJDfljXA" alt="Golden Crispy Dosa">
+              <div class="name">Golden Crispy Dosa (2 pcs)</div>
+              <div class="price">₹ 30</div>
+              <div class="desc">Crispy dosas served with chutney and sambar.</div>
+              <div class="order-row">
+                <button class="icon-btn" onclick="redirectPartner('zomato')">Zomato</button>
+                <button class="icon-btn" onclick="redirectPartner('swiggy')">Swiggy</button>
+                <button class="icon-btn" onclick="redirectPartner('ubereats')">Uber Eats</button>
+              </div>
+            </div>
+            <div class="dish" data-name="Spiced Podi Dosa Twist">
+              <div class="tag">Spiced Podi Dosa Twist</div>
+              <img src="https://images.news9live.com/wp-content/uploads/2025/01/Podi-Masala-Dosa-recipe-Experience-the-richness-of-South-Indian-cuisine-at-home.png" alt="Spiced Podi Dosa Twist">
+              <div class="name">Spiced Podi Dosa Twist (2 pcs)</div>
+              <div class="price">₹ 55</div>
+              <div class="desc">Dosa with spicy podi powder twist.</div>
+              <div class="order-row">
+                <button class="icon-btn" onclick="redirectPartner('zomato')">Zomato</button>
+                <button class="icon-btn" onclick="redirectPartner('swiggy')">Swiggy</button>
+                <button class="icon-btn" onclick="redirectPartner('ubereats')">Uber Eats</button>
+              </div>
+            </div>
+            <div class="dish" data-name="Egg-loaded Sunrise Dosa">
+              <div class="tag">Egg loaded Sunrise Dosa</div>
+              <img src="https://homecookingshow.in/wp-content/uploads/2025/02/Egg-Dosa-480x270.webp" alt="Egg-loaded Sunrise Dosa">
+              <div class="name">Egg-loaded Sunrise Dosa</div>
+              <div class="price">₹ 35</div>
+              <div class="desc">Dosa filled with egg for a protein boost.</div>
+              <div class="order-row">
+                <button class="icon-btn" onclick="redirectPartner('zomato')">Zomato</button>
+                <button class="icon-btn" onclick="redirectPartner('swiggy')">Swiggy</button>
+                <button class="icon-btn" onclick="redirectPartner('ubereats')">Uber Eats</button>
+              </div>
+            </div>
+            <div class="dish" data-name="Butter-Glazed Paratha">
+              <img src="https://i.ytimg.com/vi/DVnO7PeheSw/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDNtuBMwC-nTKlUzRkYtGRF-up-vA" alt="Butter-Glazed Paratha">
+              <div class="name">Butter-Glazed Paratha (2 pcs)</div>
+              <div class="price">₹ 30</div>
+              <div class="desc">Soft parathas glazed with butter.</div>
+              <div class="order-row">
+                <button class="icon-btn" onclick="redirectPartner('zomato')">Zomato</button>
+                <button class="icon-btn" onclick="redirectPartner('swiggy')">Swiggy</button>
+                <button class="icon-btn" onclick="redirectPartner('ubereats')">Uber Eats</button>
+              </div>
+            </div>
+            <div class="dish" data-name="Classic Chapathi">
+              <img src="https://t3.ftcdn.net/jpg/15/57/16/70/360_F_1557167049_92tZdBRe26012ajNUvhqY6JxS30sHB5j.jpg" alt="Classic Chapathi">
+              <div class="name">Classic Chapathi (2 pcs)</div>
+              <div class="price">₹ 30</div>
+              <div class="desc">Traditional wheat chapathis, soft and healthy.</div>
+              <div class="order-row">
+                <button class="icon-btn" onclick="redirectPartner('zomato')">Zomato</button>
+                <button class="icon-btn" onclick="redirectPartner('swiggy')">Swiggy</button>
+                <button class="icon-btn" onclick="redirectPartner('ubereats')">Uber Eats</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Snacks (Rolls) -->
+        <div class="category-block">
+          <div class="category-title">| Snacks (Rolls)</div>
+          <div class="dishes-grid">
+            <div class="dish" data-name="Veggie Fiesta Wrap">
+              <div class="tag">Veggie Fiesta Wrap</div>
+              <img src="https://amindfullmom.com/wp-content/uploads/2022/07/Veggie-Wrap-Recipe.jpg" alt="Veggie Fiesta Wrap">
+              <div class="name">Veggie Fiesta Wrap</div>
+              <div class="price">₹ 25</div>
+              <div class="desc">Wrap packed with fresh veggies and flavors.</div>
+              <div class="order-row">
+                <button class="icon-btn" onclick="redirectPartner('zomato')">Zomato</button>
+                <button class="icon-btn" onclick="redirectPartner('swiggy')">Swiggy</button>
+                <button class="icon-btn" onclick="redirectPartner('ubereats')">Uber Eats</button>
+              </div>
+            </div>
+            <div class="dish" data-name="Sunny-side Egg Roll">
+              <img src="https://www.thattukada.net/wp-content/uploads/2023/12/egg-roll-222.png" alt="Sunny-side Egg Roll">
+              <div class="name">Sunny-side Egg Roll</div>
+              <div class="price">₹ 30</div>
+              <div class="desc">Egg roll with a sunny side twist.</div>
+              <div class="order-row">
+                <button class="icon-btn" onclick="redirectPartner('zomato')">Zomato</button>
+                <button class="icon-btn" onclick="redirectPartner('swiggy')">Swiggy</button>
+                <button class="icon-btn" onclick="redirectPartner('ubereats')">Uber Eats</button>
+              </div>
+            </div>
+            <div class="dish" data-name="Hot & Crunchy 65 Roll">
+              <img src="https://paradisefoodcourt.wordpress.com/wp-content/uploads/2015/03/ch-roll1.png" alt="Hot & Crunchy 65 Roll">
+              <div class="name">Hot & Crunchy 65 Roll</div>
+              <div class="price">₹ 40</div>
+              <div class="desc">Spicy crispy 65 in a crunchy wrap.</div>
+              <div class="order-row">
+                <button class="icon-btn" onclick="redirectPartner('zomato')">Zomato</button>
+                <button class="icon-btn" onclick="redirectPartner('swiggy')">Swiggy</button>
+                <button class="icon-btn" onclick="redirectPartner('ubereats')">Uber Eats</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:18px">
+          <button class="btn" onclick="window.open('https://wa.me/919876543210?text=Hi%20Koumatha%20Cloud%20Home%20Kitchen%2C%20I%20want%20to%20enquire%20about%20your%20catering%20service.','_blank')">Catering Service Order</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="grid">
+      <div class="feedback">
+        <h4>Customer Feedback</h4>
+        <form id="fb-form" action="https://formspree.io/f/mjkaaqql" method="POST">
+          <label for="fb-name">Name</label>
+          <input id="fb-name" name="name" required>
+          <label for="fb-email">Email</label>
+          <input type="email" id="fb-email" name="email" required>
+          <label for="fb-message">Message</label>
+          <textarea id="fb-message" name="message" rows="4" required></textarea>
+          <button class="btn" type="submit">Send Feedback</button>
+          <p id="success-msg" style="display:none; color: green; font-weight: bold; margin-top:10px;">
+            ✅ Feedback submitted successfully!
+          </p>
+          <p id="error-msg" style="display:none; color: darkred; font-weight:700; margin-top:10px;">
+            ⚠️ Could not submit feedback — please email us at koumathakitchen@gmail.com
+          </p>
+        </form>
+      </div>
+      <aside class="contact-card" aria-label="Contact information">
+        <h4 style="margin-top:0">Contact & Info</h4>
+        <p style="margin:8px 0"><strong>Address:</strong> Chennai, Tamil Nadu</p>
+        <p style="margin:8px 0"><strong>Phone:</strong> +91-9962225337</p>
+        <p style="margin:8px 0"><strong>Email:</strong> koumathakitchen@gmail.com</p>
+        <div style="margin-top:12px">
+          <button class="btn" style="background:var(--accent-2);" onclick="openWhatsApp()">WhatsApp Us</button>
+        </div>
+      </aside>
+    </div>
+
+    <footer>&copy; 2025 Koumatha Cloud Home Kitchen xx Powered by KoumathaCloudKitchen-App</footer>
+  </div>
+
+  <!-- floating decorative food icon -->
+  <div class="floating-food" aria-hidden="true"><img src="img/Logo.png" alt="" style="width:56px;height:56px;border-radius:10px;object-fit:cover;border:3px solid #fff"></div>
+  <div class="floating-food" aria-hidden="true"><img src="img/Logo.png" alt="" style="width:56px;height:56px;border-radius:10px;object-fit:cover;border:3px solid #fff"></div>
+
+  <!-- Offer modal -->
+  <div id="offerModalBackdrop" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal" role="document">
+      <h3>Today's Offers</h3>
+      <ul>
+        <li><strong>Flat 15% OFF</strong> on all biryani orders (min ₹150)</li>
+        <li><strong>Buy 1 Get 1</strong> on Golden Crispy Dosa (today only)</li>
+        <li>Free raita on orders above <strong>₹150</strong></li>
+      </ul>
+      <div style="text-align:right;margin-top:12px">
+        <button class="btn" onclick="closeOffers()">Close</button>
+      </div>
+    </div>
+  </div>
+
+<!-- AI Assistant floating button -->
+<div class="ai-fab" id="aiFab" title="Ask Koumatha Assistant" aria-label="Koumatha assistant" role="button" tabindex="0">
+  <img src="data:image/svg+xml;utf8,
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'>
+  <circle cx='32' cy='32' r='30' fill='%23ff9800'/>
+  <rect x='20' y='24' width='24' height='18' rx='6' fill='white'/>
+  <circle cx='26' cy='33' r='3' fill='%23000'/>
+  <circle cx='38' cy='33' r='3' fill='%23000'/>
+  <rect x='29' y='42' width='6' height='2' fill='%23000'/>
+  <line x1='32' y1='12' x2='32' y2='20' stroke='white' stroke-width='3'/>
+  <circle cx='32' cy='10' r='3' fill='white'/>
+  </svg>" alt="Koumatha AI" class="ai-logo">
+
+
+
+</div>
+
+<!-- AI window -->
+<div class="ai-window" id="aiWindow" aria-hidden="true">
+  <div class="ai-header">
+    <h4>Koumatha Assistant</h4>
+    <div style="margin-left:auto">
+      <button class="btn" onclick="closeAI()" aria-label="close assistant">Close</button>
+    </div>
+  </div>
+  <div class="ai-body" id="aiBody" role="log" aria-live="polite">
+    <div class="ai-msg bot">Hi! 👋 Ask me about our menu, recipes, or say "tell me a joke" or "food fact".</div>
+  </div>
+  <div class="ai-input-row">
+    <input id="aiInput" class="ai-input" placeholder="Ask something..." aria-label="Ask Koumatha assistant" autocomplete="off">
+    <button class="btn" onclick="sendAIQuery()">Ask</button>
+  </div>
+</div>
+
+<style>
+  .ai-msg.bot img.dish-preview {
+    width: 100%; 
+    max-width: 400px; 
+    height: auto; 
+    border-radius: 10px; 
+    margin-top: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  }
+  .ai-msg { margin: 10px 0; padding: 8px 12px; border-radius: 8px; max-width: 90%; }
+  .ai-msg.bot { background:#fffbe6; }
+  .ai-msg.user { background:#d1e7ff; margin-left:auto; text-align:right; }
+</style>
+
+<script>
+const aiFab = document.getElementById('aiFab');
+const aiWindow = document.getElementById('aiWindow');
+const aiBody = document.getElementById('aiBody');
+const aiInput = document.getElementById('aiInput');
+
+aiFab.addEventListener('click', toggleAI);
+function toggleAI() {
+  aiWindow.style.display === 'flex' ? closeAI() : openAI();
+}
+function openAI() {
+  aiWindow.style.display = 'flex';
+  aiWindow.setAttribute('aria-hidden','false');
+  aiInput.focus();
+  aiBody.scrollTop = aiBody.scrollHeight;
+}
+function closeAI() {
+  aiWindow.style.display = 'none';
+  aiWindow.setAttribute('aria-hidden','true');
+  aiFab.focus();
+}
+
+function pushAIMessage(text, who='bot', imgSrc=null) {
+  const el = document.createElement('div');
+  el.className = 'ai-msg ' + (who==='user' ? 'user' : 'bot');
+  el.innerHTML = `<span>${text}</span>`;
+  if(imgSrc) {
+    const img = document.createElement('img');
+    img.src = imgSrc;
+    img.alt = "Dish image";
+    img.className = "dish-preview";
+    el.appendChild(img);
+  }
+  aiBody.appendChild(el);
+  aiBody.scrollTop = aiBody.scrollHeight;
+}
+
+// Highlight and scroll matched dish
+function highlightDish(dish){
+  dish.scrollIntoView({behavior:'smooth', block:'center'});
+  dish.style.transition = 'box-shadow 0.5s, transform 0.5s';
+  dish.style.boxShadow = '0 15px 40px rgba(255,152,0,0.35)';
+  dish.style.transform = 'scale(1.02)';
+  setTimeout(()=> { dish.style.boxShadow=''; dish.style.transform=''; }, 2500);
+}
+
+// Find matching dishes
+function findMatchingDishes(query){
+  const q = query.trim().toLowerCase().split(/\s+/);
+  const dishes = Array.from(document.querySelectorAll('.dish'));
+  const results = [];
+  dishes.forEach(d=>{
+    const name = (d.dataset.name || d.querySelector('.name')?.innerText || '').toLowerCase();
+    const desc = (d.dataset.desc || d.querySelector('.desc')?.innerText || '').toLowerCase();
+    const keywords = (d.dataset.keywords || name + " " + desc).toLowerCase();
+    if(q.some(word => keywords.includes(word))) results.push(d);
+  });
+  return results;
+}
+
+// Send AI query
+async function sendAIQuery() {
+  const qRaw = (aiInput.value || '').trim();
+  if(!qRaw) return;
+  pushAIMessage(qRaw, 'user');
+  aiInput.value = '';
+
+  const typing = document.createElement('div');
+  typing.className = 'ai-msg bot';
+  typing.textContent = 'Thinking…';
+  aiBody.appendChild(typing);
+  aiBody.scrollTop = aiBody.scrollHeight;
+
+  const matches = findMatchingDishes(qRaw);
+
+  if(matches.length > 0) {
+    typing.remove();
+    matches.forEach(d=>{
+      const name = d.dataset.name || d.querySelector('.name')?.innerText || 'Dish';
+      const price = d.dataset.price || d.querySelector('.price')?.innerText || '';
+      const desc = d.dataset.desc || d.querySelector('.desc')?.innerText || '';
+      const imgSrc = d.dataset.img || d.querySelector('img')?.src || 'placeholder.png';
+      pushAIMessage(`${name} — ${price}\n${desc}\nOrder on: Zomato | Swiggy | UberEats`, 'bot', imgSrc);
+      highlightDish(d);
+    });
+    return;
+  }
+
+  typing.remove();
+  const jokes = [
+    "Why did the tomato turn red? Because it saw the biryani!",
+    "Did you know? Biryani was once considered a royal dish in South India!",
+    "The word 'biryani' comes from Persian 'birian', meaning 'fried before cooking'."
+  ];
+  const facts = [
+    "Biryani originated in Persia and was adapted in India with local spices.",
+    "Dosa is one of the oldest fermented foods in the world.",
+    "Idli is steamed, making it healthy and light."
+  ];
+  pushAIMessage("🤖 Sorry! I cannot answer that question. But here’s a food joke/fact:\n" + 
+    (Math.random()<0.5 ? jokes[Math.floor(Math.random()*jokes.length)] : facts[Math.floor(Math.random()*facts.length)]));
+}
+</script>
+
+
+
+
+</body>
+</html>
